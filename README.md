@@ -1,75 +1,127 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
-</p>
+[useCaseDiagram]: https://www.educative.io/api/collection/5668639101419520/5692201761767424/page/5636470266134528/image/4834701682409472.png
 
-[travis-image]: https://api.travis-ci.org/nestjs/nest.svg?branch=master
-[travis-url]: https://travis-ci.org/nestjs/nest
-[linux-image]: https://img.shields.io/travis/nestjs/nest/master.svg?label=linux
-[linux-url]: https://travis-ci.org/nestjs/nest
-  
-  <p align="center">A progressive <a href="http://nodejs.org" target="blank">Node.js</a> framework for building efficient and scalable server-side applications, heavily inspired by <a href="https://angular.io" target="blank">Angular</a>.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore"><img src="https://img.shields.io/npm/dm/@nestjs/core.svg" alt="NPM Downloads" /></a>
-<a href="https://travis-ci.org/nestjs/nest"><img src="https://api.travis-ci.org/nestjs/nest.svg?branch=master" alt="Travis" /></a>
-<a href="https://travis-ci.org/nestjs/nest"><img src="https://img.shields.io/travis/nestjs/nest/master.svg?label=linux" alt="Linux" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#5" alt="Coverage" /></a>
-<a href="https://gitter.im/nestjs/nestjs?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=body_badge"><img src="https://badges.gitter.im/nestjs/nestjs.svg" alt="Gitter" /></a>
-<a href="https://opencollective.com/nest#backer"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec"><img src="https://img.shields.io/badge/Donate-PayPal-dc3d53.svg"/></a>
-  <a href="https://twitter.com/nestframework"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+[classDiagram]: https://www.educative.io/api/collection/5668639101419520/5692201761767424/page/5636470266134528/image/5972651845615616.png
 
-## Description
+[UMLConventionDiagram]: https://www.educative.io/api/collection/5668639101419520/5692201761767424/page/5636470266134528/image/5150650100875264.png
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+[checkOutBook]: https://www.educative.io/api/collection/5668639101419520/5692201761767424/page/5636470266134528/image/5690449683546112.png
 
-## Installation
+[returnBook]: https://www.educative.io/api/collection/5668639101419520/5692201761767424/page/5636470266134528/image/5756901417549824.png
+
+[renewBook]: https://www.educative.io/api/collection/5668639101419520/5692201761767424/page/5636470266134528/image/5728605367697408.png
+
+
+# Design a Library Management System
+---
+### Description
+
+A Library Management System is a software built to handle the primary housekeeping functions of a library. Libraries rely on library management systems to manage asset collections as well as relationships with their members. Library management systems help libraries keep track of the books and their checkouts, as well as members’ subscriptions and profiles.
+
+Library management systems also involve maintaining the database for entering new books and recording books that have been borrowed with their respective due dates.
+
+Inspiration: [Design a Library Management System](https://www.educative.io/courses/grokking-the-object-oriented-design-interview/RMlM3NgjAyR)
+
+---
+
+### Installation
 
 ```bash
-$ npm install
+$ yarn install
 ```
 
-## Running the app
+### Running the app
 
 ```bash
 # development
-$ npm run start
+$ yarn start
 
 # watch mode
-$ npm run start:dev
+$ yarn start:dev
 
 # production mode
-$ npm run start:prod
+$ yarn start:prod
 ```
 
-## Test
+### Stay in touch
 
-```bash
-# unit tests
-$ npm run test
+- Author - [Humayun kabir](https://humayunkabir.github.io)
+<!-- - Website - [https://nestjs.com](https://nestjs.com/) -->
+- Twitter - [@_humayunkabir](https://twitter.com/_humayunkabir)
 
-# e2e tests
-$ npm run test:e2e
+### License
 
-# test coverage
-$ npm run test:cov
-```
+**Library** is [MIT licensed](LICENSE).
 
-## Support
+---
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+### System Requirements
 
-## Stay in touch
+**We will focus on the following set of requirements while designing the Library Management System:**
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+- Any library member should be able to search books by their title, author, subject category as well by the publication date.
+- Each book will have a unique identification number and other details including a rack number which will help to physically locate the book.
+- There could be more than one copy of a book, and library members should be able to check-out and reserve any copy. We will call each copy of a book, a book item.
+- The system should be able to retrieve information like who took a particular book or what are the books checked-out by a specific library member.
+- There should be a maximum limit (5) on how many books a member can check-out.
+- There should be a maximum limit (10) on how many days a member can keep a book.
+- The system should be able to collect fines for books returned after the due date.
+- Members should be able to reserve books that are not currently available.
+- The system should be able to send notifications whenever the reserved books become available, as well as when the book is not returned within the due date.
+- Each book and member card will have a unique barcode. The system will be able to read barcodes from books and members’ library cards.
 
-## License
+### Use case diagram
+**We have three main actors in our system:**
 
-  Nest is [MIT licensed](LICENSE).
+- **Librarian**: Mainly responsible for adding and modifying books, book items, and users. The Librarian can also issue, reserve, and return book items.
+- **Member**: All members can search the catalog, as well as check-out, reserve, renew, and return a book.
+- **System**: Mainly responsible for sending notifications for overdue books, canceled reservations, etc.
+
+**Here are the top use cases of the Library Management System:**
+
+- **Add/Remove/Edit book**: To add, remove or modify a book or book item.
+- **Search catalog**: To search books by title, author, subject or publication date.
+- **Register new account/cancel membership**: To add a new member or cancel the membership of an existing member.
+- **Check-out book**: To borrow a book from the library.
+- **Reserve book**: To reserve a book which is not currently available.
+- **Renew a book**: To reborrow an already checked-out book.
+- **Return a book**: To return a book to the library which was issued to a member.
+
+![Use case diagram][useCaseDiagram]
+
+### Class diagram
+
+**Here are the main classes of our Library Management System:**
+
+- **Library**: The central part of the organization for which this software has been designed. It has attributes like ‘Name’ to distinguish it from any other libraries and ‘Address’ to describe its location.
+- **Book**: The basic building block of the system. Every book will have ISBN, Title, Subject, Publishers, etc.
+- **BookItem**: Any book can have multiple copies, each copy will be considered a book item in our system. Each book item will have a unique barcode.
+- **Account**: We will have two types of accounts in the system, one will be a general member, and the other will be a librarian
+- **LibraryCard**: Each library user will be issued a library card, which will be used to identify users while issuing or returning books.
+- **BookReservation**: Responsible for managing reservations against book items.
+- **BookLending**: Manage the checking-out of book items.
+- **Catalog**: Catalogs contain list of books sorted on certain criteria. Our system will support searching through four catalogs: Title, Author, Subject, and Publish-date.
+- **Fine**: This class will be responsible for calculating and collecting fines from library members.
+- **Author**: This class will encapsulate a book author.
+- **Rack**: Books will be placed on racks. Each rack will be identified by a rack number and will have a location identifier to describe the physical location of the rack in the library.
+- **Notification**: This class will take care of sending notifications to library members.
+
+![Class diagram][classDiagram]
+
+Class diagram for Library Management System
+
+![UML conventions][UMLConventionDiagram]
+
+
+### Activity diagrams
+
+**Check-out a book**: Any library member or librarian can perform this activity. Here are the set of steps to check-out a book:
+
+![Check-out a book][checkOutBook]
+
+**Return a book**: Any library member or librarian can perform this activity. The system will collect fines from members if they return books after the due date. Here are the steps for returning a book:
+
+![Return a book][returnBook]
+
+**Renew a book**: While renewing (re-issuing) a book, the system will check for fines and see if any other member has not reserved the same book, in that case the book item cannot be renewed. Here are the different steps for renewing a book:
+
+![Renew a book][renewBook]
