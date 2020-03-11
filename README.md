@@ -1,18 +1,14 @@
-[useCaseDiagram]: https://www.educative.io/api/collection/5668639101419520/5692201761767424/page/5636470266134528/image/4834701682409472.png
-
-[classDiagram]: https://www.educative.io/api/collection/5668639101419520/5692201761767424/page/5636470266134528/image/5972651845615616.png
-
-[UMLConventionDiagram]: https://www.educative.io/api/collection/5668639101419520/5692201761767424/page/5636470266134528/image/5150650100875264.png
-
-[checkOutBook]: https://www.educative.io/api/collection/5668639101419520/5692201761767424/page/5636470266134528/image/5690449683546112.png
-
-[returnBook]: https://www.educative.io/api/collection/5668639101419520/5692201761767424/page/5636470266134528/image/5756901417549824.png
-
-[renewBook]: https://www.educative.io/api/collection/5668639101419520/5692201761767424/page/5636470266134528/image/5728605367697408.png
-
+[usecasediagram]: https://www.educative.io/api/collection/5668639101419520/5692201761767424/page/5636470266134528/image/4834701682409472.png
+[classdiagram]: https://www.educative.io/api/collection/5668639101419520/5692201761767424/page/5636470266134528/image/5972651845615616.png
+[umlconventiondiagram]: https://www.educative.io/api/collection/5668639101419520/5692201761767424/page/5636470266134528/image/5150650100875264.png
+[checkoutbook]: https://www.educative.io/api/collection/5668639101419520/5692201761767424/page/5636470266134528/image/5690449683546112.png
+[returnbook]: https://www.educative.io/api/collection/5668639101419520/5692201761767424/page/5636470266134528/image/5756901417549824.png
+[renewbook]: https://www.educative.io/api/collection/5668639101419520/5692201761767424/page/5636470266134528/image/5728605367697408.png
 
 # Design a Library Management System
+
 ---
+
 ### Description
 
 A Library Management System is a software built to handle the primary housekeeping functions of a library. Libraries rely on library management systems to manage asset collections as well as relationships with their members. Library management systems help libraries keep track of the books and their checkouts, as well as members’ subscriptions and profiles.
@@ -45,8 +41,8 @@ $ yarn start:prod
 ### Stay in touch
 
 - Author - [Humayun kabir](https://humayunkabir.github.io)
-<!-- - Website - [https://nestjs.com](https://nestjs.com/) -->
-- Twitter - [@_humayunkabir](https://twitter.com/_humayunkabir)
+  <!-- - Website - [https://nestjs.com](https://nestjs.com/) -->
+- Twitter - [@\_humayunkabir](https://twitter.com/_humayunkabir)
 
 ### License
 
@@ -70,6 +66,7 @@ $ yarn start:prod
 - Each book and member card will have a unique barcode. The system will be able to read barcodes from books and members’ library cards.
 
 ### Use case diagram
+
 **We have three main actors in our system:**
 
 - **Librarian**: Mainly responsible for adding and modifying books, book items, and users. The Librarian can also issue, reserve, and return book items.
@@ -86,7 +83,7 @@ $ yarn start:prod
 - **Renew a book**: To reborrow an already checked-out book.
 - **Return a book**: To return a book to the library which was issued to a member.
 
-![Use case diagram][useCaseDiagram]
+![Use case diagram][usecasediagram]
 
 ### Class diagram
 
@@ -105,23 +102,22 @@ $ yarn start:prod
 - **Rack**: Books will be placed on racks. Each rack will be identified by a rack number and will have a location identifier to describe the physical location of the rack in the library.
 - **Notification**: This class will take care of sending notifications to library members.
 
-![Class diagram][classDiagram]
+![Class diagram][classdiagram]
 
 Class diagram for Library Management System
 
-![UML conventions][UMLConventionDiagram]
-
+![UML conventions][umlconventiondiagram]
 
 ### Activity diagrams
 
 **Check-out a book**: Any library member or librarian can perform this activity. Here are the set of steps to check-out a book:
 
-![Check-out a book][checkOutBook]
+![Check-out a book][checkoutbook]
 
 **Return a book**: Any library member or librarian can perform this activity. The system will collect fines from members if they return books after the due date. Here are the steps for returning a book:
 
-![Return a book][returnBook]
+![Return a book][returnbook]
 
 **Renew a book**: While renewing (re-issuing) a book, the system will check for fines and see if any other member has not reserved the same book, in that case the book item cannot be renewed. Here are the different steps for renewing a book:
 
-![Renew a book][renewBook]
+![Renew a book][renewbook]

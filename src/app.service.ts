@@ -1,8 +1,21 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable } from '@nestjs/common'
 
 @Injectable()
 export class AppService {
-  getHello(): string {
-    return 'Hello World!';
+  private appInfo = {
+    name: 'library',
+    version: '0.0.1',
+    description:
+      'Library Management System is a software built to handle the primary housekeeping functions of a library. Libraries rely on library management systems to manage asset collections as well as relationships with their members. Library management systems help libraries keep track of the books and their checkouts, as well as members’ subscriptions and profiles. Library management systems also involve maintaining the database for entering new books and recording books that have been borrowed with their respective due dates.',
+    author: {
+      name: 'Humayun Kabir',
+      email: 'humayunkabr.cep@gmail.com',
+      url: 'https://humayunkabir.github.io',
+    },
+    license: 'MIT',
+  }
+
+  welcome(): object {
+    return this.appInfo
   }
 }
