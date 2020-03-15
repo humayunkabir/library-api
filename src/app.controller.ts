@@ -1,4 +1,4 @@
-import { Controller, Request, Post, UseGuards, Get } from '@nestjs/common'
+import { Controller, Request, Post, UseGuards, Get, Body } from '@nestjs/common'
 import { AppService } from './app.service'
 import { AuthService } from './auth/auth.service'
 import { LocalAuthGuard } from './auth/gurards/local-auth.guard'
@@ -14,6 +14,15 @@ export class AppController {
   @Get()
   welcome(): object {
     return this.appService.welcome()
+  }
+
+  // @UseGuards(LocalAuthGuard)
+  @Post('auth/login/token')
+  async loginWithToken(
+    @Request() req,
+    @Body('accessToken') accessToken: string,
+  ) {
+    return this.authService.loginWithToken(accessToken)
   }
 
   @UseGuards(LocalAuthGuard)

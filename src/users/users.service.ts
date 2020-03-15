@@ -9,21 +9,25 @@ export class UsersService {
     this.users = [
       {
         id: '0',
+        name: 'Humayun Kabir',
         username: 'humayunkabir',
         password: 'pass',
       },
       {
         id: '1',
+        name: 'John Doe',
         username: 'john',
         password: 'changeme',
       },
       {
         id: '2',
+        name: 'Chirs Martin',
         username: 'chris',
         password: 'secret',
       },
       {
         id: '3',
+        name: 'Maria Jane',
         username: 'maria',
         password: 'guess',
       },
