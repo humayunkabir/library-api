@@ -12,7 +12,6 @@ export class UsersController {
     return !!ids
       ? this.service.findMany(ids.split(',').filter(id => id))
       : this.service.findAll()
-    // return !!ids ? ids.split(',').filter(id => id) : []
   }
 
   @UseGuards(JwtAuthGuard)

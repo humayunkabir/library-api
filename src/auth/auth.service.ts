@@ -20,11 +20,10 @@ export class AuthService {
   }
 
   async loginWithToken(accessToken: string) {
-    const user = this.jwtService.decode(accessToken)
-    // const { password, ...processedUser } = await this.usersService.findOne(
-    //   user.username,
-    // )
-    return user
+    const { password, ...processedUser } = await this.usersService.findOne(
+      this.jwtService.verify(accessToken).username,
+    )
+    return processedUser
   }
 
   async login(user: any) {
