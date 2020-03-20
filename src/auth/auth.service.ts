@@ -26,6 +26,12 @@ export class AuthService {
     return processedUser
   }
 
+  async verify(accessToken: string) {
+    return await this.usersService.findOne(
+      this.jwtService.verify(accessToken).username,
+    )
+  }
+
   async login(user: any) {
     const payload = { username: user.username, sub: user.id }
     const { password, ...processedUser } = await this.usersService.findOne(
